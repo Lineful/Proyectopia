@@ -1,0 +1,219 @@
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+}
+
+.header{
+    grid-area: header;
+}
+
+#main{
+  background-color: #cadffb;
+}
+
+#pae-img{
+  margin-left: 20%;
+  margin-top: 7%;
+}
+
+#logoJ{
+  margin-right: 50px;
+  height: 75px;
+}
+
+#QR{
+  width: 25%;
+  height: 50%;
+  margin-top: 12%;
+  margin-left: 37%;
+}
+
+#footer{
+    grid-area: footer;
+    background-color: #cba075;
+}
+
+footer {
+  color: black;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.copyright {
+  font-size: 16px;
+}
+
+.grid-container{
+    display: grid;
+    gap: 10px;
+    grid-template: 
+    "header" 80px
+    "main" auto
+    "footer" 50px;
+}
+
+/*responsive de tablet*/
+
+@media(min-width: 600px) and (max-width: 899px){
+    .grid-container{
+        display: grid;
+        gap: 10px;
+        grid-template: 
+        "header header" 80px
+        "main main" auto 920px
+        "footer footer" 50px / 200px auto;
+    }
+
+}
+
+/*responsive de pc*/
+
+@media(min-width: 900px) and (max-width: 2000px){
+    .grid-container{
+        display: grid;
+        gap: 0px;
+        grid-template: 
+        "header header header" 80px
+        "main main main" auto 1920px
+        "footer footer footer" 80px / 200px auto 200px;
+    }
+
+}
+
+/*inicio registro*/
+  
+  .heading {
+    margin-top: 150px;  
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    color: #cba075;
+  }
+  
+  .form {
+    margin-left: 450px;  
+    width: 400px;  
+    margin-top: 35px;
+  }
+  
+  .form .input {
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+    box-shadow: #e8c39e 0px 10px 10px -5px;
+    border-inline: 2px solid transparent;
+  }
+  
+  .form .input::-moz-placeholder {
+    color: rgb(170, 170, 170);
+  }
+  
+  .form .input::placeholder {
+    color: rgb(170, 170, 170);
+  }
+  
+  .form .input:focus {
+    outline: none;
+    border-inline: 2px solid #e8c39e;
+  }
+  
+  .form .forgot-password {
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  
+  .form .forgot-password a {
+    font-size: 11px;
+    color: grey;
+    text-decoration: none;
+  }
+  
+  .form .login-button {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    background: linear-gradient(45deg,#e8c39e 0%, #e8c39e 100%);
+    color: white;
+    padding-block: 15px;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .form .login-button:hover {
+    transform: scale(1.03);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+  }
+  
+  .form .login-button:active {
+    transform: scale(0.95);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+  }
+  
+  .form .social-account-container {
+    margin-top: 40px;
+  }
+  
+  .form .social-account-container .title {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    color: rgb(170, 170, 170);
+  }
+  
+  .form .social-account-container .social-accounts {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .form .social-account-container .social-accounts .social-button {
+    background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(112, 112, 112) 100%);
+    border: 5px solid white;
+    padding: 5px;
+    border-radius: 50%;
+    width: 40px;
+    aspect-ratio: 1;
+    display: grid;
+    place-content: center;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .form .social-account-container .social-accounts .social-button .svg {
+    fill: white;
+    margin: auto;
+  }
+  
+  .form .social-account-container .social-accounts .social-button:hover {
+    transform: scale(1.2);
+  }
+  
+  .form .social-account-container .social-accounts .social-button:active {
+    transform: scale(0.9);
+  }
+  
+  .form .agreement {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .form .agreement a {
+    text-decoration: none;
+    color: gray;
+    font-size: 9px;
+  }
+
+
