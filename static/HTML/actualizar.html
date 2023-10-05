@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Identificación y Contraseña</title>
+    <link rel="stylesheet" href="../CSS/estilosA.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Actualizar Identificación y Contraseña</h2>
+        <form action="/update_idpas" method="post">
+
+            <div class="form-group">
+                <label for="identificacion"> Digite su identificación</label> <br>
+                <input type="number" id="identificacion" name="identificacion" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nueva_contraseña">Nueva Contraseña:</label> <br>
+                <input type="password" id="contraseña" name="nueva_contraseña" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Actualizar</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
