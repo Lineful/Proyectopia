@@ -11,7 +11,7 @@ def actualizar_datos(identificacion,nueva_contraseña):
 
         cursor= connection.cursor()
 
-        Query= "UPDATE usuarios SET contraseña = %s WHERE identificacion = %s;"
+        Query= "UPDATE `tabla_registro` SET `contraseña`= %s WHERE identificacion = %s;"
 
         variables=(nueva_contraseña,identificacion)  
         cursor.execute(Query, variables)     

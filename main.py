@@ -43,12 +43,14 @@ def formularioregistrarE(request: Request, nom_e: str = Form(...), ape_e: str = 
     insertar_variables_registroE(nom_e, ape_e, id_e, grado)
     return templates.TemplateResponse("/index.html",{"request":request})
 
-@app.post("/update_idpas")
+@app.post("/update")
 def form_update(request: Request, identificacion: str=Form(...), nueva_contraseña: str=Form(...)):
     print("RUTA ACTUALIZAR")
     print(identificacion)
     print(nueva_contraseña)
+
     actualizar_datos(identificacion,nueva_contraseña)
+    return templates.TemplateResponse("/index.html",{"request":request})
 
 if __name__=='__main__':
     print("método principal")
