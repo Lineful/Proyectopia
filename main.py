@@ -9,6 +9,8 @@ from static.PY.funcion_conexion import *
 from static.PY.funcion_insertar import *
 from static.PY.funcion_actualizar import *
 from static.PY.funcion_borrar import *
+from static.PY.selectlogin import *
+
 
 templates = Jinja2Templates(directory="C:/Users/Usuario/Music/Proyectopia/static")
 
@@ -55,11 +57,19 @@ def form_update(request: Request, identificacion: str=Form(...), nueva_contrase�
 
 @app.post("/borrar")
 def form_delete(request: Request, identificacion: str=Form(...)):
-    print("función borrar")
+    print("RUTA BORRAR")
     print(identificacion)
 
-    #borrar_datos(identificacion)
+    borrar_datos(identificacion)
     return templates.TemplateResponse("/index.html",{"request":request})
+
+@app.post("/selectlogin") 
+def form_login(request: Request, identificacion: str=Form(...), contraseña: str=Form(...) ):
+    print(identificacion) 
+    print(contraseña)
+
+    funcionlogin(identificacion,contraseña)
+    return templates.TemplateResponse("/HTML/indexQR.html",{"request":request})
 
 if __name__=='__main__':
     print("método principal")

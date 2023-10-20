@@ -18,7 +18,7 @@ def insertar_variables_registro(nom,ape,id,pas,cargo):
         connection.commit()
         print("se realizo la inserción") 
 
-    except mysql.connector.error:
+    except mysql.connector.Error:
         print("algo ha fallado")
 
 
@@ -40,6 +40,6 @@ def insertar_variables_registroE(nom_e,ape_e,id_e,grado):
         connection.commit()
         print("se realizo la inserción") 
 
-    except mysql.connector.error:
+    except mysql.connector.Error:
         print("algo ha fallado")
 

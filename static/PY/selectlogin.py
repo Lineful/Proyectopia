@@ -1,7 +1,7 @@
 from static.PY.funcion_conexion import *
 
-def actualizar_datos(identificacion,nueva_contraseña):
-    print("actualizar datos")
+def funcionlogin(identificacion,contraseña):
+    print("iniciar sesion")
     
     try:
         connection=conexion()
@@ -11,13 +11,12 @@ def actualizar_datos(identificacion,nueva_contraseña):
 
         cursor= connection.cursor()
 
-        Query= "UPDATE `tabla_registro` SET `contraseña`= %s WHERE identificacion = %s;"
+        Query= "SELECT identifacion, contraseña from usuarios where identificacion = %s;"
 
-        variables=(nueva_contraseña,identificacion)  
+        variables=(identificacion)  
         cursor.execute(Query, variables)     
         connection.commit()
         print("se realizo la inserción") 
 
     except mysql.connector.Error:
         print("algo ha fallado")
-    

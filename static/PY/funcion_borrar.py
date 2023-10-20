@@ -13,11 +13,11 @@ def borrar_datos(identificacion):
 
         Query= "DELETE FROM `tabla_registro` WHERE identificacion = %s;"
 
-        variables=(identificacion)  
+        variables=(identificacion,)  
         cursor.execute(Query, variables)     
         connection.commit()
         print("se realizo la inserción") 
 
-    except mysql.connector.error:
+    except mysql.connector.Error:
         print("algo ha fallado")
     
