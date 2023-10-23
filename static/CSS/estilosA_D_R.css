@@ -1,15 +1,15 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #cadffb;
     margin: 0;
     padding: 0;
 }
 
-.container {
-    margin-top: 10%;
-    margin-left: 650px;
-    max-width: 400px;
-    height: 400px;
+.container1 {
+    margin-left: 38%;
+    margin-top: 7%;
+    width: 430px;
+    height: 550px;
     padding: 20px 40px;
     background-color: #fff;
     border: 1px solid #ccc;
@@ -17,7 +17,7 @@ body {
     border-radius: 5px;
 }
 
-.container h2 {
+.container1 h2 {
     text-align: center;
 }
 

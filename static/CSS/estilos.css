@@ -78,7 +78,15 @@ footer {
 /*inicio registro*/
 
 .heading {
-    margin-top: 150px;
+    margin-top: 140px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    color: #cba075;
+}
+
+.headingAI {
+    margin-top: 190px;
     text-align: center;
     font-weight: 900;
     font-size: 30px;
@@ -212,4 +220,5 @@ footer {
     cursor: pointer;
     text-transform: lowercase;
     transition: .3s ease all;
+    font-family: Bloogle
 }
