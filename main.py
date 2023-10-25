@@ -56,11 +56,12 @@ def form_update(request: Request, identificacion: str=Form(...), nueva_contrase�
     return templates.TemplateResponse("/index.html",{"request":request})
 
 @app.post("/borrar")
-def form_delete(request: Request, identificacion: str=Form(...)):
+def form_delete(request: Request, identificacion: str=Form(...), contraseña: str=Form(...)):
     print("RUTA BORRAR")
     print(identificacion)
+    print(contraseña)
 
-    borrar_datos(identificacion)
+    borrar_datos(identificacion,contraseña)
     return templates.TemplateResponse("/index.html",{"request":request})
 
 @app.post("/selectlogin") 

@@ -1,6 +1,6 @@
 from static.PY.funcion_conexion import *
 
-def borrar_datos(identificacion):
+def borrar_datos(identificacion,contraseña):
     print("borrar datos")
     
     try:
@@ -11,9 +11,9 @@ def borrar_datos(identificacion):
 
         cursor= connection.cursor()
 
-        Query= "DELETE FROM `tabla_registro` WHERE identificacion = %s;"
+        Query= "DELETE FROM `tabla_registro` WHERE identificacion = %s AND contraseña = %s;"
 
-        variables=(identificacion,)  
+        variables=(identificacion,contraseña)  
         cursor.execute(Query, variables)     
         connection.commit()
         print("se realizo la inserción") 
