@@ -10,6 +10,10 @@ body {
     grid-area: header;
 }
 
+.grid-container {
+    background-color: #cadffb;
+}
+
 #main {
     background-color: #cadffb;
 }

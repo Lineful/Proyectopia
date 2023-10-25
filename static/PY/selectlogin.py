@@ -1,22 +1,27 @@
 from static.PY.funcion_conexion import *
+import mysql.connector
 
-def funcionlogin(identificacion,contraseña):
+def funcionlogin(identificacion, contraseña):
     print("iniciar sesion")
     
     try:
-        connection=conexion()
-        if (connection):
+        connection = conexion()
+        if connection:
             print("conexión realizada")
 
+        cursor = connection.cursor()
 
-        cursor= connection.cursor()
+        query = "SELECT identificacion, contraseña FROM tabla_registro WHERE identificacion = %s AND contraseña = %s;"
+        variables = (identificacion, contraseña)
+        cursor.execute(query, variables)
 
-        Query= "SELECT identifacion, contraseña from usuarios where identificacion = %s;"
+        results = cursor.fetchall()
 
-        variables=(identificacion)  
-        cursor.execute(Query, variables)     
-        connection.commit()
-        print("se realizo la inserción") 
+        if results:
+            return True
+        else:
+            return False
 
-    except mysql.connector.Error:
-        print("algo ha fallado")
+    except mysql.connector.Error as error:
+        print(f"Algo ha fallado: {error}")
+        return False

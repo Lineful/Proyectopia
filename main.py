@@ -69,8 +69,10 @@ def form_login(request: Request, identificacion: str=Form(...), contraseña: str
     print(identificacion) 
     print(contraseña)
 
-    funcionlogin(identificacion,contraseña)
-    return templates.TemplateResponse("/HTML/indexQR.html",{"request":request})
+    if funcionlogin(identificacion, contraseña):
+        return templates.TemplateResponse("/HTML/indexQR.html", {"request": request})
+    else:
+         return {"error": "Las credenciales no coinciden, no se puede iniciar sesión."}
 
 if __name__=='__main__':
     print("método principal")
