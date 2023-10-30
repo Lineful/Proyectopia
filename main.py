@@ -43,8 +43,10 @@ def formularioregistrarE(request: Request, nom_e: str = Form(...), ape_e: str = 
     print(id_e)
     print(grado)
 
-    insertar_variables_registroE(nom_e, ape_e, id_e, grado)
-    return templates.TemplateResponse("/index.html",{"request":request})
+    dates=insertar_variables_registroE(nom_e,ape_e,id_e,grado)
+    datos = { 'Nombre': dates[0][0], 'Apellido': dates[0][1], 'Identificacion': dates[0][2], 'Grado': dates[0][3] } 
+
+    return templates.TemplateResponse("/HTML/listado.html", {"request": request, "datos": datos})
 
 @app.post("/update")
 def form_update(request: Request, identificacion: str=Form(...), nueva_contraseña: str=Form(...)):

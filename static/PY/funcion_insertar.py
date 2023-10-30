@@ -22,24 +22,24 @@ def insertar_variables_registro(nom,ape,id,pas,cargo):
         print("algo ha fallado")
 
 
-def insertar_variables_registroE(nom_e,ape_e,id_e,grado):
+import mysql.connector
+
+def insertar_variables_registroE(nom_e, ape_e, id_e, grado):
     print("estamos en la función registro estudiantil")
 
     try:
-        connection=conexion()
-        if (connection):
+        connection = conexion()
+        if connection:
             print("conexión realizada")
 
+        cursor = connection.cursor()
 
-        cursor= connection.cursor()
+        Query = """INSERT INTO tabla_registro_e (nombre, apellido, identificacion, grado) VALUES (%s, %s, %s, %s)"""
 
-        Query= """INSERT INTO `tabla_registro_e`(`nombre`, `apellido`, `identificacion`, `grado` ) VALUES (%s,%s,%s,%s) """
-
-        variables=(nom_e, ape_e, id_e, grado)  
-        cursor.execute(Query, variables)     
+        variables = (nom_e, ape_e, id_e, grado)
+        cursor.execute(Query, variables)
         connection.commit()
-        print("se realizo la inserción") 
+        print("se realizo la inserción")
 
-    except mysql.connector.Error:
-        print("algo ha fallado")
-
+    except mysql.connector.Error as err:
+        print(f"Algo ha fallado: {err}")

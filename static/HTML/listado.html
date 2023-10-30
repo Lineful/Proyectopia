@@ -44,14 +44,19 @@
         <table id="records-table" class="table">
             <thead>
                 <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
-                    <th scope="col">Identificación</th>
-                    <th scope="col">Grado</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Identificación</th>
+                    <th>Grado</th>
                 </tr>
             </thead>
             <tbody id="table-body">
-                <!-- Aquí se llenarán los registros en tiempo real -->
+                <tr>
+                    <td>{{ datos.Nombre }}</td>
+                    <td>{{ datos.Apellido }}</td>
+                    <td>{{ datos.Identificacion }}</td>
+                    <td>{{ datos.Grado }}</td>
+                </tr>
             </tbody>
         </table>
     </main>
