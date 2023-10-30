@@ -53,7 +53,9 @@ footer {
 .grid-container {
     display: grid;
     gap: 10px;
-    grid-template: "header" 80px "main" auto "footer" 50px;
+    grid-template-areas: "header" "main" "footer";
+    grid-template-rows: 100px auto 100px;
+    grid-template-columns: 1fr;
 }
 
 
@@ -63,7 +65,8 @@ footer {
     .grid-container {
         display: grid;
         gap: 10px;
-        grid-template: "header header" 80px "main main" auto 920px "footer footer" 50px / 200px auto;
+        grid-template-areas: "header header" "main main" "footer footer";
+        grid-template-columns: 200px 1fr
     }
 }
 
@@ -74,7 +77,8 @@ footer {
     .grid-container {
         display: grid;
         gap: 0px;
-        grid-template: "header header header" 80px "main main main" auto 1920px "footer footer footer" 80px / 200px auto 200px;
+        grid-template-areas: "header header header" "main main main" "footer footer footer";
+        grid-template-columns: 200px 1fr 200px
     }
 }
 
