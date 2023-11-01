@@ -1,4 +1,5 @@
 from static.PY.funcion_conexion import *
+import mysql.connector
 
 def insertar_variables_registro(nom,ape,id,pas,cargo):
     print("estamos en la función registro usuarios")
@@ -20,9 +21,6 @@ def insertar_variables_registro(nom,ape,id,pas,cargo):
 
     except mysql.connector.Error:
         print("algo ha fallado")
-
-
-import mysql.connector
 
 def insertar_variables_registroE(nom_e, ape_e, id_e, grado):
     print("estamos en la función registro estudiantil")

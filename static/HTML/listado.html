@@ -41,24 +41,29 @@
     </header>
 
     <main id="main">
-        <table id="records-table" class="table">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Identificación</th>
-                    <th>Grado</th>
-                </tr>
-            </thead>
-            <tbody id="table-body">
-                <tr>
-                    <td>{{ datos.Nombre }}</td>
-                    <td>{{ datos.Apellido }}</td>
-                    <td>{{ datos.Identificacion }}</td>
-                    <td>{{ datos.Grado }}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="container">
+            <h2>Datos Registrados</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Identificación</th>
+                        <th>Grado</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>{{ datos.Nombre }}</td>
+                        <td>{{ datos.Apellido }}</td>
+                        <td>{{ datos.Identificacion }}</td>
+                        <td>{{ datos.Grado }}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
     </main>
 
     <footer id="footer">
