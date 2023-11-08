@@ -44,24 +44,18 @@
         <div class="container">
             <h2>Datos Registrados</h2>
             <table class="table">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Identificación</th>
-                        <th>Grado</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr>
-                        <td>{{ datos.Nombre }}</td>
-                        <td>{{ datos.Apellido }}</td>
-                        <td>{{ datos.Identificacion }}</td>
-                        <td>{{ datos.Grado }}</td>
-                    </tr>
-
-                </tbody>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Identificación</th>
+                    <th>Grado</th>
+                </tr>
+                <tr>
+                    <td>{{ datos.nombre }}</td>
+                    <td>{{ datos.apellido }}</td>
+                    <td>{{ datos.identificacion }}</td>
+                    <td>{{ datos.grado }}</td>
+                </tr>
             </table>
         </div>
     </main>

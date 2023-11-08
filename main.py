@@ -48,10 +48,10 @@ def formularioregistrarE(request: Request, nom_e: str = Form(...), ape_e: str = 
     if dates is not None and dates:
         print(dates[0][0])
         datos = { 
-        'Nombre': dates[0][0],
-        'Apellido': dates[0][1],
-        'Identificacion': dates[0][2],
-        'Grado': dates[0][3]
+        'nombre': dates[0][0],
+        'apellido': dates[0][1],
+        'identificacion': dates[0][2],
+        'grado': dates[0][3]
     }
     else:
         print("La función insertar_variables_registroE no ha devuelto ningún valor.")
