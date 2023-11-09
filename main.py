@@ -10,7 +10,7 @@ from static.PY.funcion_insertar import *
 from static.PY.funcion_actualizar import *
 from static.PY.funcion_borrar import *
 from static.PY.selectlogin import *
-
+from static.PY.funcion_insertarRE import *
 
 templates = Jinja2Templates(directory="C:/Users/Usuario/Music/Proyectopia/static")
 
@@ -91,6 +91,19 @@ def form_login(request: Request, identificacion: str=Form(...), contraseña: str
 
     else:
          return {"error": "Las credenciales no coinciden, no se puede iniciar sesión."}
+         
+@app.post("/registrarRE")
+def formularioregistrar(request: Request, fecha_e: str = Form(...), descripcion: str = Form(...), n_r: str = Form(...), n_e: str = Form(...)):
+    print("esta en la ruta principal")
+     
+    print(fecha_e)
+    print(descripcion)
+    print(n_r)
+    print(n_e)
+
+    insertar_variables_registro_re(fecha_e, descripcion, n_r, n_e)
+    return templates.TemplateResponse("/HTML/indexQR.HTML",{"request":request})
+
 
 if __name__=='__main__':
     print("método principal")
