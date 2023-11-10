@@ -11,6 +11,7 @@ from static.PY.funcion_actualizar import *
 from static.PY.funcion_borrar import *
 from static.PY.selectlogin import *
 from static.PY.funcion_insertarRE import *
+from static.PY.funcion_listar import *
 
 templates = Jinja2Templates(directory="C:/Users/Usuario/Music/Proyectopia/static")
 
@@ -34,6 +35,23 @@ def formularioregistrar(request: Request, nom: str = Form(...), ape: str = Form(
     insertar_variables_registro(nom, ape, id, pas, cargo)
     return templates.TemplateResponse("/index.html",{"request":request})
 
+
+@app.post("/listarE")
+def listados(request: Request):
+    print("LISTAR ESTUDIANTES")
+    dates = funcionlistar()
+
+    estudiantes = []
+    for date in dates:
+        datos = {
+            'nombre': date[0],
+            'apellido': date[1],
+            'identificacion': date[2],
+            'grado': date[3]
+        }
+        estudiantes.append(datos)
+
+    return templates.TemplateResponse("/HTML/listado.html", {"request": request, "estudiantes": estudiantes})
 @app.post("/registrarE")
 def formularioregistrarE(request: Request, nom_e: str = Form(...), ape_e: str = Form(...), id_e: str = Form(...), grado: str = Form(...)):
     print("esta en la ruta principal")
@@ -43,24 +61,9 @@ def formularioregistrarE(request: Request, nom_e: str = Form(...), ape_e: str = 
     print(id_e)
     print(grado)
 
-    dates=insertar_variables_registroE(nom_e,ape_e,id_e,grado)
+    insertar_variables_registroE(nom_e,ape_e,id_e,grado)
 
-    if dates is not None and dates:
-        print(dates[0][0])
-        datos = { 
-        'nombre': dates[0][0],
-        'apellido': dates[0][1],
-        'identificacion': dates[0][2],
-        'grado': dates[0][3]
-    }
-    else:
-        print("La función insertar_variables_registroE no ha devuelto ningún valor.")
-        datos = None
-
-        print(datos)
-
-
-    return templates.TemplateResponse("/index.html", {"request": request, "datos": datos})
+    return templates.TemplateResponse("/index.html", {"request": request})
 
 @app.post("/update")
 def form_update(request: Request, identificacion: str=Form(...), nueva_contraseña: str=Form(...)):

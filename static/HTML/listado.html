@@ -42,7 +42,7 @@
 
     <main id="main">
         <div class="container">
-            <h2>Datos Registrados</h2>
+            <h2 id="titulo-listado">Datos Registrados</h2>
             <table class="table">
                 <tr>
                     <th>Nombre</th>
@@ -50,12 +50,16 @@
                     <th>Identificación</th>
                     <th>Grado</th>
                 </tr>
+
+                {% for estudiante in estudiantes %}
                 <tr>
-                    <td>{{ datos.nombre }}</td>
-                    <td>{{ datos.apellido }}</td>
-                    <td>{{ datos.identificacion }}</td>
-                    <td>{{ datos.grado }}</td>
+                    <td>{{ estudiante.nombre }}</td>
+                    <td>{{ estudiante.apellido }}</td>
+                    <td>{{ estudiante.identificacion }}</td>
+                    <td>{{ estudiante.grado }}</td>
                 </tr>
+                {% endfor %}
+
             </table>
         </div>
     </main>

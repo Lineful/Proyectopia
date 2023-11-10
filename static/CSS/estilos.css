@@ -74,6 +74,18 @@
                 grid-template: "header header" 80px "main main" auto "footer footer" 60px;
             }
         }
+        /*listado*/
+        
+        #titulo-listado {
+            margin-left: 63%;
+            margin-top: 20%;
+            text-align: center;
+        }
+        
+        .table {
+            margin-left: 30%;
+            margin-top: 5%;
+        }
         /*inicio registro*/
         
         .heading {
