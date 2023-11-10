@@ -52,6 +52,7 @@ def listados(request: Request):
         estudiantes.append(datos)
 
     return templates.TemplateResponse("/HTML/listado.html", {"request": request, "estudiantes": estudiantes})
+
 @app.post("/registrarE")
 def formularioregistrarE(request: Request, nom_e: str = Form(...), ape_e: str = Form(...), id_e: str = Form(...), grado: str = Form(...)):
     print("esta en la ruta principal")
