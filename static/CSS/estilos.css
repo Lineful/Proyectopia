@@ -144,7 +144,7 @@
         
         .form .forgot-password a {
             font-size: 11px;
-            color: grey;
+            color: rgba(0, 0, 0, 0.747);
             text-decoration: none;
         }
         
@@ -153,7 +153,7 @@
             width: 100%;
             font-weight: bold;
             background: linear-gradient(45deg, #e8c39e 0%, #e8c39e 100%);
-            color: white;
+            color: rgba(0, 0, 0, 0.747);
             padding-block: 15px;
             margin: 20px auto;
             border-radius: 20px;
@@ -180,7 +180,7 @@
             display: block;
             text-align: center;
             font-size: 10px;
-            color: rgb(170, 170, 170);
+            color: rgba(0, 0, 0, 0.89);
         }
         
         .form .social-account-container .social-accounts {
@@ -225,7 +225,7 @@
         
         .form .agreement a {
             text-decoration: none;
-            color: gray;
+            color: rgba(0, 0, 0, 0.89);
             font-size: 9px;
         }
         
